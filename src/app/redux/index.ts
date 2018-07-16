@@ -38,10 +38,8 @@ export const debug = (reducer: ActionReducer<any>): ActionReducer<any> => {
 
 export const metaReducers: MetaReducer<any>[] = [debug];
 
-/**
- * User Reducers
- */
-export const getUsersState = createFeatureSelector<fromUser.State>('users');
+export const effects = [
+  ...fromUser.effects
+];
 
-export const getAllUsers = createSelector(getUsersState, fromUser.getUsers);
 
